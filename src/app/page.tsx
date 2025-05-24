@@ -1,3 +1,4 @@
+import { Toaster } from "sonner";
 import PromptForm from "@/components/PromptForm";
 import ResultCard from "@/components/ResultCard";
 
@@ -16,6 +17,7 @@ export default function HomePage() {
 
         <ResultCard />
       </div>
+      <Toaster />
     </main>
   );
 }
