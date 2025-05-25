@@ -2,7 +2,16 @@ import { v4 as uuidv4 } from "uuid";
 import useStore from "@/store/zustandStore";
 
 export async function generatePrompt(prevState: unknown, formData: FormData) {
+  const store = useStore.getState();
+
   try {
+    if (store.promptCount >= 3) {
+      return {
+        success: false,
+        message: "Maksimum 3 içerik oluşturabilirsiniz.",
+      };
+    }
+
     const prompt = formData.get("prompt") as string;
 
     if (!prompt) {
@@ -24,7 +33,7 @@ export async function generatePrompt(prevState: unknown, formData: FormData) {
 
     const content = await res.json();
 
-    useStore.getState().addedGeneratedContent({
+    store.addedGeneratedContent({
       id: uuidv4(),
       prompt,
       content,

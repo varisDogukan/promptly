@@ -3,8 +3,10 @@
 import { useActionState, useEffect, useTransition } from "react";
 import { generatePrompt } from "@/lib/actions";
 import { toast } from "sonner";
+import useStore from "@/store/zustandStore";
 
 export default function PromptForm() {
+  const { promptCount } = useStore();
   const [isPending, startTransition] = useTransition();
   const [state, formAction] = useActionState(generatePrompt, {
     success: false,
@@ -27,6 +29,12 @@ export default function PromptForm() {
       });
     }
   }, [state]);
+
+  if (promptCount >= 3) {
+    return (
+      <p className='text-red-400 mt-6'>Maksimum 3 içerik oluşturabilirsiniz.</p>
+    );
+  }
 
   return (
     <form className='max-w-[400] w-full' action={handleSubmit}>
