@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className='min-h-screen bg-slate-900 text-slate-400'>
+    <main className='min-h-screen bg-slate-900 text-slate-400 pb-10'>
       <Header />
       <div className='container'>{children}</div>
       <Toaster />
