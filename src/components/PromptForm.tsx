@@ -19,7 +19,12 @@ export default function PromptForm() {
 
   useEffect(() => {
     if (state.message) {
-      toast.success(state.message as string);
+      toast(state.message as string, {
+        style: {
+          background: state.success ? "#08551d" : "#550808",
+          color: "#94a3b8",
+        },
+      });
     }
   }, [state]);
 

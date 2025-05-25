@@ -5,6 +5,13 @@ export async function generatePrompt(prevState: unknown, formData: FormData) {
   try {
     const prompt = formData.get("prompt") as string;
 
+    if (!prompt) {
+      return {
+        success: false,
+        message: "Lütfen prompt giriniz.",
+      };
+    }
+
     const res = await fetch("/api/generate", {
       method: "POST",
       body: JSON.stringify({ prompt }),
