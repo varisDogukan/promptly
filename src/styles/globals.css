@@ -25,6 +25,14 @@ button:hover {
   gap: 2rem;
 }
 
+.prose {
+  max-width: 100%;
+}
+
+.container {
+  @apply px-4 xl:px-0 max-w-7xl mx-auto;
+}
+
 @media (min-width: 1024px) {
   .responsive-grid-container {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

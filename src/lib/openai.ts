@@ -7,8 +7,18 @@ export async function generateContent(prompt: string) {
     messages: [
       {
         role: "system",
-        content:
-          "Tüm çıktıyı markdown formatında yaz. En az bir başlık ve bir liste kullan. Kullanıcının konusuna göre bilgi verici bir içerik üret.",
+        content: `
+          Kullanıcının verdiği konu hakkında markdown formatında detaylı bir içerik üret. 
+          - Yazıya anlamlı bir başlıkla başla (## Başlık)
+          - Giriş paragrafı ile kullanıcıyı karşıla
+          - Ana noktaları listelerle açıkla (• veya -)
+          - Gerekiyorsa alt başlıklar kullan (###)
+          - Emoji ve ikonlarla içeriği zenginleştir (örneğin ✅, 🚀, 💡 gibi)
+          - Teknik konularda gerekiyorsa \`\`\` kod bloğu \`\`\` kullan
+          - Sonuna bir özet veya öneri cümlesi ekle
+
+          Konu ne olursa olsun profesyonel, açıklayıcı ve ilgi çekici bir yazı olsun. Gereksiz tekrarlar veya aşırı sade cümleler olmasın.
+        `,
       },
       {
         role: "user",
