@@ -37,12 +37,12 @@ export default function PromptForm() {
   }
 
   return (
-    <form className='max-w-[400] w-full' action={handleSubmit}>
+    <form className='max-w-[400px]' action={handleSubmit}>
       <input
         type='text'
         name='prompt'
         placeholder='Ne hakkında yazmamı istersin?'
-        className='p-4 bg-slate-950 rounded-lg w-full  border border-slate-800 placeholder:opacity-50 mb-6 '
+        className='p-4 bg-slate-950 rounded-lg w-full  border border-slate-800 placeholder:opacity-50 mb-6 inline-block'
       />
 
       <button
