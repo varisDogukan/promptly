@@ -65,10 +65,8 @@ Promptly, kullanıcıların basit bir metin girdisiyle profesyonel ve markdown f
 ---
 
 ## Canlı Demo
-
-```md
 [🔗 Canlı Demo](https://promptly-sooty.vercel.app)
-```
+
 
 ---
 
